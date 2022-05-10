@@ -42,7 +42,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "LIU Yuanhao: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                    "text": "Name: LIU Yuanhao, Eugene\nMatriculation: A0249470Y\nEmail: e0941663@u.nus.edu\nRepo: git://github.com:LAUYUNHOU/SA54_CICD.git \nImage name: eugjj/sa54_randnum:test \nImage URL: https://hub.docker.com/repository/docker/liiiuyuanhao/sa54_cicd"
                   }
                 }
               ]
