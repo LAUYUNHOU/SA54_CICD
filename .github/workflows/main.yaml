@@ -12,7 +12,7 @@ jobs:
     
     steps:
 
-      # https://github.com/marketplace/actions/checkout
+     
       - name: Checkout the code from github repo
         uses: actions/checkout@v3
     
@@ -22,11 +22,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
     
-    # - name: Build and push
-    #   uses: docker/build-push-action@v2
-    #   with:
-    #     push: true
-    #     tags: ${{ github.repository }}:${{ github.ref_name }}
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: SA54_CICD:v2.0
 
     # - name: Send custom JSON data to Slack workflow
     #   id: slack
