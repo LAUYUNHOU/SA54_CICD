@@ -42,7 +42,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Name: LIU Yuanhao\nMatriculation: A0249470Y\nEmail: e0941663@u.nus.edu\nRepo: git://github.com:LAUYUNHOU/SA54_CICD.git \nImage name: testing \nImage URL: https://hub.docker.com/repository/docker/liiiuyuanhao/sa54_cicd"
+                    "text": "Name: LIU Yuanhao\nMatriculation: A0249470Y\nEmail: e0941663@u.nus.edu\nRepo: git://github.com:LAUYUNHOU/SA54_CICD.git \nImage web: https://aws.amazon.com/tw/docker/ \nImage URL: https://hub.docker.com/repository/docker/liiiuyuanhao/sa54_cicd"
                   }
                 }
               ]
