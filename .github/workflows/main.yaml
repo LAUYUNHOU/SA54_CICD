@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: sa54_cicd:v2.0
+          tags: sa54_cicd:v2.1.2
 
     # - name: Send custom JSON data to Slack workflow
     #   id: slack
