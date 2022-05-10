@@ -27,25 +27,19 @@ jobs:
         with:
           push: true
           tags: liiiuyuanhao/sa54_cicd:v2.1.2
+      
 
-    # - name: Send custom JSON data to Slack workflow
-    #   id: slack
-    #   uses: slackapi/slack-github-action@v1.18.0
-    #   with:
-    #     # For posting a rich message using Block Kit
-    #     payload: |
-    #       {
-    #         "text": "SA54 Submission",
-    #         "blocks": [
-    #           {
-    #             "type": "section",
-    #             "text": {
-    #               "type": "mrkdwn",
-    #               "text": "Name: ${{secrets.USER_NAME}}\nMatriculation Number: ${{secrets.MAT_NUMBER}}\nEmail: ${{secrets.EMAIL}}\nRepository: ${{ github.repositoryUrl }}\nImage Name: ${{ github.repository }}:${{ github.ref_name }}\nImage URL: ${{secrets.IMAGE_URL}}"
-    #             }
-    #           }
-    #         ]
-    #       }
-    #   env:
-    #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-    #     SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+      - name: Post message on slack
+              uses: bluenovaio/action-slack@master
+              with:
+                username: "LIU Yuanhao"
+                icon_emoji: ":CICD_Image:"
+                text:  "${{secrets.SLACK_MSG}} \nRepo: ${{ github.repositoryUrl }}\nImage name: ${{ secrets.DOCKERHUB_USERNAME }}/randimg:${{github.ref_name}}\nImage url: https://hub.docker.com/repository/docker/liiiuyuanhao/sa54_cicd"
+                webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
