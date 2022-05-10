@@ -1,6 +1,6 @@
 name: Github 2 Dockerhub 2 Slack
 on:
-  push:
+  release: 
     # types: [published]
     # tag:
     # - v1.*
