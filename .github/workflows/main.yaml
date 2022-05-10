@@ -1,0 +1,47 @@
+name: git workshop
+on:
+  push:
+    types: [published]
+
+jobs:
+  full-workshop-flow:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout tag
+      uses: actions/checkout@v3
+      with:
+        ref: ${{github.ref_name}}
+    
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    
+    # - name: Build and push
+    #   uses: docker/build-push-action@v2
+    #   with:
+    #     push: true
+    #     tags: ${{ github.repository }}:${{ github.ref_name }}
+
+    # - name: Send custom JSON data to Slack workflow
+    #   id: slack
+    #   uses: slackapi/slack-github-action@v1.18.0
+    #   with:
+    #     # For posting a rich message using Block Kit
+    #     payload: |
+    #       {
+    #         "text": "SA54 Submission",
+    #         "blocks": [
+    #           {
+    #             "type": "section",
+    #             "text": {
+    #               "type": "mrkdwn",
+    #               "text": "Name: ${{secrets.USER_NAME}}\nMatriculation Number: ${{secrets.MAT_NUMBER}}\nEmail: ${{secrets.EMAIL}}\nRepository: ${{ github.repositoryUrl }}\nImage Name: ${{ github.repository }}:${{ github.ref_name }}\nImage URL: ${{secrets.IMAGE_URL}}"
+    #             }
+    #           }
+    #         ]
+    #       }
+    #   env:
+    #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    #     SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
