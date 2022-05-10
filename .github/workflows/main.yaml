@@ -7,10 +7,8 @@ jobs:
   full-workshop-flow:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout tag
-      uses: actions/checkout@v3
-      with:
-        ref: ${{github.ref_name}}
+    - name: Checkout tools repo
+       uses: actions/checkout@v3
     
     - name: Login to Docker Hub
       uses: docker/login-action@v1
